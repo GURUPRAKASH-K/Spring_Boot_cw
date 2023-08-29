@@ -8,34 +8,50 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="start")
 public class Model {
-@Id
-@GeneratedValue
-private Long id;
-private String name;
-private int age;
-public Long getId() {
-	return id;
+	@Id
+	@GeneratedValue
+private int bikeid;
+private String ownername;
+private int year;
+private String bikename;
+private String modelname;
+public int getBikeid() {
+	return bikeid;
 }
-public void setId(Long id) {
-	this.id = id;
+public void setBikeid(int bikeid) {
+	this.bikeid = bikeid;
 }
-public String getName() {
-	return name;
+public String getOwnername() {
+	return ownername;
 }
-public void setName(String name) {
-	this.name = name;
+public void setOwnername(String ownername) {
+	this.ownername = ownername;
 }
-public int getAge() {
-	return age;
+public int getYear() {
+	return year;
 }
-public void setAge(int age) {
-	this.age = age;
+public void setYear(int year) {
+	this.year = year;
 }
-public Model(Long id, String name, int age) {
+public String getBikename() {
+	return bikename;
+}
+public void setBikename(String bikename) {
+	this.bikename = bikename;
+}
+public String getModelname() {
+	return modelname;
+}
+public void setModelname(String modelname) {
+	this.modelname = modelname;
+}
+public Model(int bikeid, String ownername, int year, String bikename, String modelname) {
 	super();
-	this.id = id;
-	this.name = name;
-	this.age = age;
+	this.bikeid = bikeid;
+	this.ownername = ownername;
+	this.year = year;
+	this.bikename = bikename;
+	this.modelname = modelname;
 }
 public Model() {
 	super();

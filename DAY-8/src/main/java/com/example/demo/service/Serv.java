@@ -20,13 +20,13 @@ public class Serv {
 	{
 		return sr.saveAll(ss);
 	}
-	public List<Model> startswi(String name)
+	public List<Model> startswi(String bikename)
 	{
-		return sr.starts(name);
+		return sr.starts(bikename);
 	}
-	public List<Model> endswi(String name)
+	public List<Model> endswi(String bikename)
 	{
-		return sr.ends(name);
+		return sr.ends(bikename);
 	}
 	
 

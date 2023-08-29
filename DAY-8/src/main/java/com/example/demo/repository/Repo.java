@@ -10,9 +10,9 @@ import com.example.demo.model.Model;
 
 public interface Repo extends JpaRepository<Model, Long>{
 
-	@Query(value = "select * from start where name like :b%",nativeQuery = true)
-	public List<Model> starts(@Param("b")String name);
+	@Query(value = "select * from start where bikename like :b%",nativeQuery = true)
+	public List<Model> starts(@Param("b")String bikename);
 	
-	@Query(value = "select * from start where name like %:bn",nativeQuery = true)
+	@Query(value = "select * from start where bikename like %:bn",nativeQuery = true)
 	public List<Model> ends(@Param("bn") String name);
 }

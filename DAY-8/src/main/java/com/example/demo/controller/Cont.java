@@ -26,15 +26,15 @@ public List<Model> getin()
 {
 	return sser.getinfo();
 	}
-@GetMapping("get1/{name}")
-public List<Model> star(@PathVariable String name)
+@GetMapping("get1/{bikename}")
+public List<Model> star(@PathVariable String bikename)
 {
-	return sser.startswi(name);
+	return sser.startswi(bikename);
 }
-@GetMapping("get2/{name}")
-public List<Model> en(@PathVariable String name)
+@GetMapping("get2/{bikename}")
+public List<Model> en(@PathVariable String bikename)
 {
-	return sser.endswi(name);
+	return sser.endswi(bikename);
 }
 
 }

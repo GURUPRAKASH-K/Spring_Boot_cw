@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.example.demo.model.TicketEntity;
 import com.example.demo.service.TicketService;
 
@@ -50,4 +51,54 @@ public String delete(@PathVariable Long phone_no)
 {
 	return sser.deleteat(phone_no);
 }
+@GetMapping("getasc/{name}")
+public List<TicketEntity> sorta(@PathVariable String name)
+{
+	return sser.sortasc(name);
+}
+@GetMapping("sortandpage/{pgno}/{pgsize}")
+public List<TicketEntity>sortpage(@PathVariable int pgno,@PathVariable int pgsize){
+	return sser.getbypage(pgno,pgsize);
+}
+@GetMapping("getdesc/{name}")
+public List<TicketEntity> sortd(@PathVariable String name)
+{
+	return sser.sortdesc(name);
+}
+//select or
+	@GetMapping("/getn/{age}/{name}")
+	public List<TicketEntity> gtn(@PathVariable int age,@PathVariable String name)
+	{
+		return sser.gt(age, name);
+	}
+	//select and
+	@GetMapping("/getand/{age}/{name}")
+	public List<TicketEntity> gan(@PathVariable int age,@PathVariable String name)
+	{
+		return sser.gand(age, name);
+	}
+//	//select like start
+	@GetMapping("getlike/{name}")
+	public List<TicketEntity> gli(@PathVariable String name)
+	{
+		return sser.gstart(name);
+	}
+//	//select like end
+	@GetMapping("getend/{name}")
+	public List<TicketEntity> gen(@PathVariable String name)
+	{
+		return sser.gend(name);
+	}
+	//update
+	@PutMapping("update/{name}/{id}")
+	public Integer ut(@PathVariable String name,@PathVariable String id)
+	{
+		return sser.updat(name,id);
+	}
+	//delete
+	@DeleteMapping("del/{age}")
+	public Integer de(@PathVariable int age)
+	{
+		return sser.del(age);
+	}
 }

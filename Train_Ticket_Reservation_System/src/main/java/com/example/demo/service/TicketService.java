@@ -4,8 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
 import com.example.demo.model.TicketEntity;
 import com.example.demo.model.repository.TicketRepository;
 
@@ -53,5 +55,47 @@ public String deleteat(Long phone_no)
 	{
 		return "Invalid number";
 	}
+}
+public List<TicketEntity> sortasc(String name)
+{
+	return sr.findAll(Sort.by(Sort.Direction.ASC,name));
+}
+public List<TicketEntity> sortdesc(String name)
+{
+	return sr.findAll(Sort.by(Sort.Direction.DESC,name));
+}
+public List<TicketEntity> getbypage(int pgno,int pgsize){
+	Page<TicketEntity> p=sr.findAll(PageRequest.of(pgno, pgsize));
+	return p.getContent();
+}
+//select for or statement
+public List<TicketEntity> gt(int age,String name)
+{
+	return sr.geti(age, name);
+}
+//select for and statement
+public List<TicketEntity> gand(int age,String name)
+{
+	return sr.getand(age, name);
+}
+//select for like start
+public List<TicketEntity> gstart(String name)
+{
+	return sr.getstart(name);
+}
+//select for like end
+public List<TicketEntity> gend(String name)
+{
+	return sr.getend(name);
+}
+//update
+public Integer updat(String name,String name1)
+{
+	return sr.up(name,name1);
+}
+//delete
+public Integer del(int id)
+{
+	return sr.de(id);
 }
 }

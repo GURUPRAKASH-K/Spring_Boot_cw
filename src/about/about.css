@@ -1,0 +1,27 @@
+#p1{
+    position: absolute;
+    transform: translate(300px,200px);
+    text-align: center;
+    font-size: large;
+    height: 350px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+    width:1000px;
+    border: dotted;
+    background: aliceblue;
+    color: crimson;
+
+  }
+  #p2
+  {
+    position: absolute;
+    opacity: 40%;
+    height: 700px;
+    width:1500px
+  }
+  #p3
+  {
+    position: absolute;
+    transform: translate(100px,100px);
+    color: rgb(172, 9, 212);
+  }

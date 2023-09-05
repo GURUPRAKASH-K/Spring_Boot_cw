@@ -19,13 +19,14 @@ private int age;
 private String source;
 private String destination;
 private String date;
-@OneToMany(cascade = CascadeType.ALL)
-@JoinColumn(name="link_id")
-private List<TrainEntity> many;
-
-@OneToOne(cascade = CascadeType.ALL)
-@JoinColumn(name="join_id")
-private LoginEntity one;
+//@OneToMany(cascade = CascadeType.ALL)
+//@JoinColumn(name="link_id")
+// 
+//private List<TrainEntity> many;
+//
+//@OneToOne(cascade = CascadeType.ALL)
+//@JoinColumn(name="join_id")
+//private LoginEntity one;
 
 public String getName() {
 	return name;
@@ -75,24 +76,23 @@ public void setDate(String date) {
 	this.date = date;
 }
 
-public List<TrainEntity> getMany() {
-	return many;
-}
+//public List<TrainEntity> getMany() {
+//	return many;
+//}
+//
+//public void setMany(List<TrainEntity> many) {
+//	this.many = many;
+//}
+//
+//public LoginEntity getOne() {
+//	return one;
+//}
+//
+//public void setOne(LoginEntity one) {
+//	this.one = one;
+//}
 
-public void setMany(List<TrainEntity> many) {
-	this.many = many;
-}
-
-public LoginEntity getOne() {
-	return one;
-}
-
-public void setOne(LoginEntity one) {
-	this.one = one;
-}
-
-public TicketEntity(String name, Long phone_no, int age, String source, String destination, String date,
-		List<TrainEntity> many, LoginEntity one) {
+public TicketEntity(String name, Long phone_no, int age, String source, String destination, String date) {
 	super();
 	this.name = name;
 	this.phone_no = phone_no;
@@ -100,8 +100,7 @@ public TicketEntity(String name, Long phone_no, int age, String source, String d
 	this.source = source;
 	this.destination = destination;
 	this.date = date;
-	this.many = many;
-	this.one = one;
+	
 }
 
 public TicketEntity() {

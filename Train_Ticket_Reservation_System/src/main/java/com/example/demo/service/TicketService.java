@@ -15,9 +15,9 @@ import com.example.demo.model.repository.TicketRepository;
 public class TicketService {
 @Autowired
 TicketRepository sr;
-public List<TicketEntity> saveinfo(List<TicketEntity> ss)
+public TicketEntity saveinfo(TicketEntity ss)
 {
-	return sr.saveAll(ss);
+	return sr.save(ss);
 }
 public List<TicketEntity> showinfo()
 {

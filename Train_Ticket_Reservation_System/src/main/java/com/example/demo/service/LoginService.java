@@ -12,14 +12,26 @@ import com.example.demo.model.repository.LoginRepo;
 public class LoginService {
 @Autowired
 LoginRepo sr;
-public List<LoginEntity> saveinfo(List<LoginEntity> ss)
+public LoginEntity saveinfo(LoginEntity ss)
 {
-	return sr.saveAll(ss);
+	return sr.save(ss);
 }
 public List<LoginEntity> showinfo()
 {
 	return sr.findAll();
 }
+//public String update(String mailid,LoginEntity ss)
+//{
+//	sr.saveAndFlush(ss);
+//	if(sr.existsById(mailid))
+//	{
+//		return "yes";
+//	}
+//	else
+//	{
+//		return "no";
+//	}
+//}
 public String deleteinfo(String mailid)
 {
 	if(sr.existsById(mailid))
